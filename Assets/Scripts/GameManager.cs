@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     //This variable keeps track of the game status i.e., if it is over or not.
-    private bool isGameOver = false;
+    private bool isGameOver = true;
 
     //This variable keeps track of the score.
     private int score = 0;
@@ -86,9 +86,6 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + 0; // Display the zero score in the text view.
 
         isGameOver = false; // Game is no longer over.
-
-        //Reset the player's position on y-axis.
-        player.transform.position = new Vector2(player.transform.position.x, 0);
 
         player.SetActive(true); // Activate the Player.
 

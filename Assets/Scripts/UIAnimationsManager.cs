@@ -14,7 +14,7 @@ public class UIAnimationsManager : MonoBehaviour
 
     //Animator to show/hide the UI elements ("Shooter" text and "Play" button.)
     public Animator gameUIContentAnimator;
-    
+
 
     void Awake()
     {
@@ -40,7 +40,8 @@ public class UIAnimationsManager : MonoBehaviour
 
     //This function is called when the "HideGameStartUIAnimation" ends. For reference, check
     //the last key frame in the Animation window for the "HideGameStartUIAnimation" animation.
-    public void OnHideGameStartUIAnimationEnd() {
+    public void OnHideGameStartUIAnimationEnd()
+    {
 
         //Call the "OnHideGameStartUIAnimationEnd" located inside the GameManager. This
         //function contains the logic to start the game.
@@ -49,7 +50,8 @@ public class UIAnimationsManager : MonoBehaviour
 
     //Start animation to hide the "Shooter" text and "Play" button when the user
     //clicks on the "Play" button.
-    public void HideGameStartUIControls() {
+    public void HideGameStartUIControls()
+    {
 
         // "HideStartGameUIControlsTrigger": This trigger is set in the Animator window
         // for HideGameStartUIAnimation Animation.
@@ -61,7 +63,8 @@ public class UIAnimationsManager : MonoBehaviour
     #region Show/Hide Game Over UI Controls
 
     //This function is responsible to trigger the animation "ShowGameOverUIAnimation".
-    public void ShowGameOverUIControls() {
+    public void ShowGameOverUIControls()
+    {
 
         gameUIContentAnimator.SetTrigger("ShowGameOverUIControlsTrigger"); // Trigger Animation
     }

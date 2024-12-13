@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrackManager : MonoBehaviour
 {
-    private float trackSpeed = 5f;
+    private float trackSpeed = 5f; //Road divider's speed
 
     // Update is called once per frame
     private void Update()

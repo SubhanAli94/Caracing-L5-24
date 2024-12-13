@@ -1,11 +1,15 @@
 using System.Threading;
 using UnityEngine;
 
-public class RoadSpawnerScript : MonoBehaviour
+public class EnemySpawnerScript : MonoBehaviour
 {
-    public GameObject roadDividerPrefab; //Road Divider Prefab
-    public static float interval = 0.6f; //Inerval is used for timer 
+    public GameObject enemyCarPrefab; //Enemy Car Prefab
+    public static float interval = 1f; //Inerval is used for timer 
     private static float timer = 2; //Timer is used to keep track of last spawn time
+
+    public Transform leftEdgeOfRoad; // Location of the left edge
+    public Transform rightEdgeOfRoad; // Location of the right edge
+
 
     // Update is called once per frame
     void Update()
@@ -29,8 +33,15 @@ public class RoadSpawnerScript : MonoBehaviour
     //This function helps to spawn road divider.
     private void SpawnRoadDivider()
     {
-        //Instantiate the road Prefab at random position along y-axis.
-        Instantiate(roadDividerPrefab, transform.position, transform.rotation);
+        //Select random x
+        float randomX = Random.Range(0, 2) == 0 ? leftEdgeOfRoad.position.x + 2.5f : rightEdgeOfRoad.position.x - 1.5f;
+
+        //Set new pos
+        Vector2 newPos = new Vector2(randomX, transform.position.y);
+
+
+        //Instantiate the Pipe Prefab at random position along y-axis.
+        Instantiate(enemyCarPrefab, newPos, transform.rotation);
     }
 
     /* Function: Reset the timer.

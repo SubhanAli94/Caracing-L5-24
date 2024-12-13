@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pipe
-  - AreaToPass
-  - Enemy
-  - Bullet
-  - PipesParent
+  - PlayerCarGround
+  - EnemyCar
+  - RoadDivider
   layers:
   - Default
   - TransparentFX
